@@ -37,13 +37,13 @@ void sprites_create(void)
 		uint16_t sprite_offset = chessman_index * 512;
 	
 		sprite_set_pattern(sprite_index, chessmen_spr + sprite_offset, true);
-		sprite_set_attributes_rel(sprite_index, sprite_index, 0, 0, 0, 0, true, true, true);
+		sprite_set_attributes(sprite_index, sprite_index, 0, 0, 0, 0, 0, SPRITE_VISIBLE | SPRITE_ANCHOR | SPRITE_4BIT);
 		sprite_set_pattern(sprite_index + 1, chessmen_spr + sprite_offset + 128, true);
-		sprite_set_attributes_rel(sprite_index + 1, 1, 16, 0, 0, 0, true, false, true);
+		sprite_set_attributes(sprite_index + 1, 1, 16, 0, 0, 0, 0, SPRITE_VISIBLE | SPRITE_4BIT);
 		sprite_set_pattern(sprite_index + 2, chessmen_spr + sprite_offset + 256, true);
-		sprite_set_attributes_rel(sprite_index + 2, 2, 0, 16, 0, 0, true, false, true);
+		sprite_set_attributes(sprite_index + 2, 2, 0, 16, 0, 0, 0, SPRITE_VISIBLE | SPRITE_4BIT);
 		sprite_set_pattern(sprite_index + 3, chessmen_spr + sprite_offset + 384, true);
-		sprite_set_attributes_rel(sprite_index + 3, 3, 16, 16, 0, 0, true, false, true);
+		sprite_set_attributes(sprite_index + 3, 3, 16, 16, 0, 0, 0, SPRITE_VISIBLE | SPRITE_4BIT);
 		
 		if (chessman_count[sprite_count] < fig_count[fig_index] - 1)
 			chessman_count[sprite_count]++;
